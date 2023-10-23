@@ -9,3 +9,5 @@ class Customer {
     return this.orderHistory.push(cart);
   }
 }
+
+module.exports = Customer;
