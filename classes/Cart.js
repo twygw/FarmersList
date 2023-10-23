@@ -1,5 +1,5 @@
 class Cart {
-  constructor() {
+  constructor(products, total) {
     this.products = [];
     this.total = 0;
   }
@@ -8,9 +8,8 @@ class Cart {
     this.total += product.price;
   }
   removeProduct(product) {
-    let space = this.products.indexOf(product);
-    this.products.splice(space, 1);
-    this.total -= product.price;
+    this.total -= this.products[product].price;
+    this.products.splice(product, 1);
   }
 }
 
