@@ -1,15 +1,16 @@
 class Cart {
-  constructor(name, price, description, inStock) {
-    this.product = [];
+  constructor() {
+    this.products = [];
     this.total = 0;
   }
-  addProduct(item) {
-    this.product.push(item);
-    this.total += price;
+  addProduct(product) {
+    this.products.push(product);
+    this.total += product.price;
   }
-  removeProduct(num) {
-    this.product.splice(num, 1);
-    this.total - price;
+  removeProduct(product) {
+    let space = this.products.indexOf(product);
+    this.products.splice(space, 1);
+    this.total -= product.price;
   }
 }
 
